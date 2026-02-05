@@ -92,7 +92,6 @@ namespace WatcherRegionArt
             if (!sceneToRegion.TryGetValue(self.sceneID, out string region))
                 return;
 
-            Plugin.logger.LogInfo("Building scene: " + region);
             string folder = $"Scenes{Path.DirectorySeparatorChar}Landscape - {region}";
             string flatName = $"Landscape - {region} - Flat";
             string shadowName = $"Title_{region}_Shadow";
@@ -185,7 +184,8 @@ namespace WatcherRegionArt
                 i => i.MatchLdloc(3),
                 i => i.MatchBrtrue(out _)))
             {
-                c.Remove();
+                c.Index++;
+                c.Emit(OpCodes.Pop);
                 c.Emit(OpCodes.Ldc_I4_0);
             }
             else Plugin.logger.LogError("SleepAndDeathScreen_GetDataFromGame FAILURE " + il);
