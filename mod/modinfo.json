@@ -1,0 +1,11 @@
+{
+  "id": "shrub.watcherregionart",
+  "name": "Watcher Region Art",
+  "version": "1.0.0",
+  "authors": "shrubftomtomorrow",
+  "checksum_override_version": false,
+  "description": "Adds region art for Watcher regions",
+  "priorities": [
+    "watcher"
+  ],
+}

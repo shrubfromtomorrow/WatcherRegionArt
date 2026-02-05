@@ -1,0 +1,79 @@
+﻿// using... NUTHIN?? A class wit NUTHIN??
+namespace WatcherRegionArt
+{
+    public class Enums
+    {
+        public class SceneID
+        {
+            public static Menu.MenuScene.SceneID Landscape_WRFA;
+            public static Menu.MenuScene.SceneID Landscape_WARB;
+            public static Menu.MenuScene.SceneID Landscape_WBLA;
+            public static Menu.MenuScene.SceneID Landscape_WSKC;
+            public static Menu.MenuScene.SceneID Landscape_WTDA;
+            public static Menu.MenuScene.SceneID Landscape_WARF;
+            public static Menu.MenuScene.SceneID Landscape_WARA;
+            public static Menu.MenuScene.SceneID Landscape_WARC;
+            public static Menu.MenuScene.SceneID Landscape_WARD;
+            public static Menu.MenuScene.SceneID Landscape_WARE;
+            public static Menu.MenuScene.SceneID Landscape_WARG;
+            public static Menu.MenuScene.SceneID Landscape_WAUA;
+            public static Menu.MenuScene.SceneID Landscape_WDSR;
+            public static Menu.MenuScene.SceneID Landscape_WGWR;
+            public static Menu.MenuScene.SceneID Landscape_WHIR;
+            public static Menu.MenuScene.SceneID Landscape_WMPA;
+            public static Menu.MenuScene.SceneID Landscape_WORA;
+            public static Menu.MenuScene.SceneID Landscape_WPGA;
+            public static Menu.MenuScene.SceneID Landscape_WPTA;
+            public static Menu.MenuScene.SceneID Landscape_WRFB;
+            public static Menu.MenuScene.SceneID Landscape_WRRA;
+            public static Menu.MenuScene.SceneID Landscape_WRSA;
+            public static Menu.MenuScene.SceneID Landscape_WSKA;
+            public static Menu.MenuScene.SceneID Landscape_WSKB;
+            public static Menu.MenuScene.SceneID Landscape_WSKD;
+            public static Menu.MenuScene.SceneID Landscape_WSSR;
+            public static Menu.MenuScene.SceneID Landscape_WSUR;
+            public static Menu.MenuScene.SceneID Landscape_WTDB;
+            public static Menu.MenuScene.SceneID Landscape_WVWA;
+            public static Menu.MenuScene.SceneID Landscape_WVWB;
+
+            public static void RegisterValues()
+            {
+                var fields = typeof(WatcherRegionArt.Enums.SceneID).GetFields(
+                    System.Reflection.BindingFlags.Static |
+                    System.Reflection.BindingFlags.Public);
+
+                foreach (var field in fields)
+                {
+                    if (field.FieldType == typeof(Menu.MenuScene.SceneID) &&
+                        field.Name.StartsWith("Landscape_"))
+                    {
+                        string name = field.Name;
+                        var instance = new Menu.MenuScene.SceneID(name, true);
+                        field.SetValue(null, instance);
+                    }
+                }
+            }
+
+            public static void UnregisterValues()
+            {
+                var fields = typeof(WatcherRegionArt.Enums.SceneID).GetFields(
+                    System.Reflection.BindingFlags.Static |
+                    System.Reflection.BindingFlags.Public);
+
+                foreach (var field in fields)
+                {
+                    if (field.FieldType == typeof(Menu.MenuScene.SceneID) &&
+                        field.Name.StartsWith("Landscape_"))
+                    {
+                        var id = field.GetValue(null) as Menu.MenuScene.SceneID;
+                        if (id != null)
+                        {
+                            id.Unregister();
+                            field.SetValue(null, null);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
