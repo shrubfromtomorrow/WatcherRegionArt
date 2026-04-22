@@ -1,11 +1,18 @@
 {
   "id": "shrub.watcherregionart",
   "name": "Watcher Region Art",
-  "version": "1.0.0",
-  "authors": "shrubftomtomorrow",
+  "version": "1.0.1",
+  "authors": "shrubfromtomorrow",
   "checksum_override_version": false,
   "description": "Adds region art for Watcher regions",
   "priorities": [
     "watcher"
   ],
+  "requirements": [],
+  "requirements_names": [],
+  "tags": [
+    "Dependency",
+    "Watcher",
+    "Game Mechanics"
+  ]
 }

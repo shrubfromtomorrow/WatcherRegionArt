@@ -26,6 +26,8 @@ namespace WatcherRegionArt
             // Set ripple to maximum available on passage
             On.SaveState.ApplyCustomEndGame += SaveState_ApplyCustomEndGame;
 
+            On.MoreSlugcats.BackgroundOptionsMenu.IndexUnlocked += BackgroundOptionsMenu_IndexUnlocked;
+
 
             try
             {
@@ -40,6 +42,11 @@ namespace WatcherRegionArt
             {
                 Plugin.logger.LogInfo(e);
             }
+        }
+
+        private static bool BackgroundOptionsMenu_IndexUnlocked(On.MoreSlugcats.BackgroundOptionsMenu.orig_IndexUnlocked orig, MoreSlugcats.BackgroundOptionsMenu self, int ind, List<string> regions)
+        {
+            return true;
         }
 
         private static MenuScene.SceneID Region_GetRegionLandscapeScene(On.Region.orig_GetRegionLandscapeScene orig, string regionAcro)
@@ -101,9 +108,6 @@ namespace WatcherRegionArt
 
             self.AddIllustration(
                 new MenuIllustration(self.menu, self, folder, flatName, new Vector2(683f, 384f), false, true));
-
-            self.AddIllustration(
-                new MenuIllustration(self.menu, self, "", shadowName, new Vector2(0.01f, 0.01f), true, false));
 
             if (self.menu.ID == ProcessManager.ProcessID.FastTravelScreen || self.menu.ID == ProcessManager.ProcessID.RegionsOverviewScreen)
             {

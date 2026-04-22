@@ -15,7 +15,7 @@ namespace WatcherRegionArt
     {
         public const string ID = "shrub.watcherregionart";
         public const string NAME = "Watcher Region Art";
-        public const string VERSION = "1.0.0";
+        public const string VERSION = "1.0.1";
 
         internal static ManualLogSource logger;
         public static Plugin instance;
